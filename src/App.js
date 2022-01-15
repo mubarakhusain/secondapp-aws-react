@@ -23,21 +23,21 @@ function App() {
 
   //fetch tasks
   const fetchTasks = async () =>{
-    const res = await fetch("http://localhost:5000/tasks")
+    const res = await fetch("http://localhost:8000/tasks")
     const data = await res.json()
     return data;
   }
 
 //fetch task
   const fetchTask = async (id) =>{
-    const res = await fetch(`http://localhost:5000/tasks/${id}`)
+    const res = await fetch(`http://localhost:8000/tasks/${id}`)
     const data = await res.json()
     return data;
   }
 
 //add task 
 const addTask = async (task) => {
-  const res = await fetch("http://localhost:5000/tasks", {
+  const res = await fetch("http://localhost:8000/tasks", {
     method: 'POST',
     headers: {
       'Content-type': 'application/json'
@@ -57,7 +57,7 @@ const addTask = async (task) => {
 
 //delete 
 const deleteTask = async (id) => {
-  await fetch(`http://localhost:5000/tasks/${id}`, {
+  await fetch(`http://localhost:8000/tasks/${id}`, {
     method: 'DELETE'
   })
 
@@ -74,7 +74,7 @@ const toggleReminder = async (id) => {
 
 
   }
-  const res = await fetch(`http://localhost:5000/tasks/${id}`,{
+  const res = await fetch(`http://localhost:8000/tasks/${id}`,{
   method: 'PUT',
   headers: {
     'Content-type': 'application/json'
